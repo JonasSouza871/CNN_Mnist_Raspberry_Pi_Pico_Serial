@@ -52,7 +52,7 @@ Contém o notebook de treinamento principal com implementação abrangente:
 - **Conversão do Modelo**: Conversão TFLite com quantização INT8
 
 <div align="center">
-<img src="Arquitetura_do_modelo.png" alt="Arquitetura_do_modelo.png" width="900"/>
+<img src="Images/Arquitetura_do_modelo.png" alt="Arquitetura_do_modelo.png" width="900"/>
 <p><em>Arquitetura do modelo</em></p>
 </div>
 
