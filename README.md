@@ -73,7 +73,7 @@ Contém os modelos TFLite convertidos:
 - **Otimizado para Tamanho**: Pegada de memória mínima para microcontroladores
 
 <div align="center">
-<img src="Images/training_validation_curves.png" alt="Curvas de Treinamento" width="600"/>
+<img src="Images/Treinamento.png" alt="Curvas de Treinamento" width="600"/>
 <p><em>Curvas de treinamento e validação mostrando o desempenho do modelo</em></p>
 </div>
 
