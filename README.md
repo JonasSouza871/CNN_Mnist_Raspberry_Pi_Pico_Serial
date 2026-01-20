@@ -52,8 +52,8 @@ Contém o notebook de treinamento principal com implementação abrangente:
 - **Conversão do Modelo**: Conversão TFLite com quantização INT8
 
 <div align="center">
-<img src="Images/sample_images.png" alt="Imagens de Exemplo MNIST" width="600"/>
-<p><em>Amostras de imagens MNIST usadas para treinamento</em></p>
+<img src="Arquitetura_do_modelo.png" alt="Arquitetura_do_modelo.png" width="900"/>
+<p><em>Arquitetura do modelo</em></p>
 </div>
 
 ### Firmware
@@ -73,7 +73,7 @@ Contém os modelos TFLite convertidos:
 - **Otimizado para Tamanho**: Pegada de memória mínima para microcontroladores
 
 <div align="center">
-<img src="Images/Treinamento.png" alt="Curvas de Treinamento" width="600"/>
+<img src="Images/Treinamento.png" alt="Curvas de Treinamento" width="900"/>
 <p><em>Curvas de treinamento e validação mostrando o desempenho do modelo</em></p>
 </div>
 
@@ -87,7 +87,7 @@ Visualizações geradas a partir do processo de treinamento:
 - **Resultados de Validação**: Previsões do modelo em amostras de teste
 
 <div align="center">
-<img src="Images/confusion_matrix.png" alt="Matriz de Confusão" width="600"/>
+<img src="Images/Matriz_confusao.png" alt="Matriz de Confusão" width="900"/>
 <p><em>Matriz de confusão mostrando o desempenho do modelo em todas as classes de dígitos</em></p>
 </div>
 
