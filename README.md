@@ -1,4 +1,4 @@
-# CNN MNIST TinyML Project
+# Projeto CNN MNIST TinyML
 
 <div align="center">
 
@@ -10,159 +10,159 @@
 
 </div>
 
-## Overview
+## Visão Geral
 
-This project implements a Convolutional Neural Network (CNN) for handwritten digit recognition using the MNIST dataset, specifically optimized for deployment on microcontrollers like the Raspberry Pi Pico. The model is trained using TensorFlow and converted to TensorFlow Lite (TFLite) format with INT8 quantization for efficient execution on resource-constrained devices.
+Este projeto implementa uma Rede Neural Convolucional (CNN) para reconhecimento de dígitos manuscritos usando o dataset MNIST, especificamente otimizado para implantação em microcontroladores como o Raspberry Pi Pico. O modelo é treinado usando TensorFlow e convertido para o formato TensorFlow Lite (TFLite) com quantização INT8 para execução eficiente em dispositivos com recursos limitados.
 
-## Features
+## Recursos
 
-- **Lightweight CNN Architecture**: Designed specifically for TinyML applications
-- **TFLite Conversion**: Optimized INT8 quantization for microcontroller deployment
-- **Complete Training Pipeline**: From data preprocessing to model evaluation
-- **Performance Metrics**: Comprehensive evaluation with accuracy, confusion matrix, and classification reports
-- **Hardware Ready**: Ready for deployment on Raspberry Pi Pico and similar microcontrollers
+- **Arquitetura CNN Leve**: Projetada especificamente para aplicações TinyML
+- **Conversão TFLite**: Quantização INT8 otimizada para implantação em microcontroladores
+- **Pipeline Completo de Treinamento**: Desde o pré-processamento dos dados até a avaliação do modelo
+- **Métricas de Desempenho**: Avaliação abrangente com acurácia, matriz de confusão e relatórios de classificação
+- **Pronto para Hardware**: Pronto para implantação no Raspberry Pi Pico e microcontroladores semelhantes
 
-## Repository Structure
+## Estrutura do Repositório
 
 ```
 cnn_mnist_tinyML/
-├── notebooks/                 # Jupyter notebooks for training
-│   └── Model_Training.ipynb   # Main training notebook
-├── firmware/                  # Microcontroller firmware
-│   ├── cnn_mnist.c            # Main inference code
-│   ├── tflm_wrapper.cpp       # TensorFlow Lite Micro wrapper
-│   └── tflm_wrapper.h         # Header file for TFLM wrapper
-├── models/                    # Trained models (TFLite format)
-├── Images/                    # Generated plots and visualizations
-├── test/                      # Test data and samples
-├── pico-tflmicro/             # TensorFlow Lite Micro library
-├── build/                     # Build artifacts
-├── README.md                  # This file
-└── CMakeLists.txt             # Build configuration
+├── notebooks/                 # Notebooks Jupyter para treinamento
+│   └── Model_Training.ipynb   # Notebook principal de treinamento
+├── firmware/                  # Firmware do microcontrolador
+│   ├── cnn_mnist.c            # Código principal de inferência
+│   ├── tflm_wrapper.cpp       # Wrapper TensorFlow Lite Micro
+│   └── tflm_wrapper.h         # Arquivo de cabeçalho para TFLM
+├── models/                    # Modelos treinados (formato TFLite)
+├── Images/                    # Gráficos e visualizações geradas
+├── test/                      # Dados e amostras de teste
+├── pico-tflmicro/             # Biblioteca TensorFlow Lite Micro
+├── build/                     # Artefatos de compilação
+├── README.md                  # Este arquivo
+└── CMakeLists.txt             # Configuração de compilação
 ```
 
 ### Notebooks
 
-Contains the main training notebook with comprehensive implementation:
+Contém o notebook de treinamento principal com implementação abrangente:
 
-- **Data Preprocessing**: Loading and preparing MNIST dataset
-- **Model Architecture**: Lightweight CNN design optimized for TinyML
-- **Training Process**: Complete training with validation
-- **Evaluation**: Performance metrics and visualizations
-- **Model Conversion**: TFLite conversion with INT8 quantization
+- **Pré-processamento de Dados**: Carregamento e preparação do dataset MNIST
+- **Arquitetura do Modelo**: Design CNN leve otimizado para TinyML
+- **Processo de Treinamento**: Treinamento completo com validação
+- **Avaliação**: Métricas de desempenho e visualizações
+- **Conversão do Modelo**: Conversão TFLite com quantização INT8
 
 <div align="center">
-<img src="Images/mnist_sample_images_first_10.png" alt="MNIST Sample Images" width="600"/>
-<p><em>Sample MNIST images used for training</em></p>
+<img src="Images/sample_images.png" alt="Imagens de Exemplo MNIST" width="600"/>
+<p><em>Amostras de imagens MNIST usadas para treinamento</em></p>
 </div>
 
 ### Firmware
 
-Microcontroller-side implementation:
+Implementação do lado do microcontrolador:
 
-- **CNN Inference**: Efficient inference engine for microcontrollers
-- **TFLM Wrapper**: Interface with TensorFlow Lite Micro
-- **Serial Communication**: Data transfer and result reporting
+- **Inferência CNN**: Motor de inferência eficiente para microcontroladores
+- **Wrapper TFLM**: Interface com TensorFlow Lite Micro
+- **Comunicação Serial**: Transferência de dados e relatório de resultados
 
-### Models
+### Modelos
 
-Contains the converted TFLite models:
+Contém os modelos TFLite convertidos:
 
-- **Quantized Models**: INT8 quantized for efficient execution
-- **Header Files**: C-compatible header files for embedding
-- **Size Optimized**: Minimal memory footprint for microcontrollers
-
-<div align="center">
-<img src="Images/cnn_training_validation_curves.png" alt="Training Curves" width="600"/>
-<p><em>Training and validation curves showing model performance</em></p>
-</div>
-
-### Images
-
-Generated visualizations from the training process:
-
-- **Sample Images**: Visualization of MNIST dataset samples
-- **Training Curves**: Accuracy and loss over epochs
-- **Confusion Matrix**: Detailed performance breakdown
-- **Validation Results**: Model predictions on test samples
+- **Modelos Quantizados**: Quantização INT8 para execução eficiente
+- **Arquivos de Cabeçalho**: Arquivos compatíveis com C para incorporação
+- **Otimizado para Tamanho**: Pegada de memória mínima para microcontroladores
 
 <div align="center">
-<img src="Images/confusion_matrix_cnn_mnist.png" alt="Confusion Matrix" width="600"/>
-<p><em>Confusion matrix showing model performance across all digit classes</em></p>
+<img src="Images/training_validation_curves.png" alt="Curvas de Treinamento" width="600"/>
+<p><em>Curvas de treinamento e validação mostrando o desempenho do modelo</em></p>
 </div>
 
-### Test
+### Imagens
 
-Test data and validation files:
+Visualizações geradas a partir do processo de treinamento:
 
-- **Test Samples**: Preprocessed test data for validation
-- **Validation Scripts**: Scripts to verify model performance
-- **Performance Benchmarks**: Comparison metrics
+- **Imagens de Exemplo**: Visualização das amostras do dataset MNIST
+- **Curvas de Treinamento**: Acurácia e perda ao longo das épocas
+- **Matriz de Confusão**: Análise detalhada de desempenho
+- **Resultados de Validação**: Previsões do modelo em amostras de teste
 
-### Build System
+<div align="center">
+<img src="Images/confusion_matrix.png" alt="Matriz de Confusão" width="600"/>
+<p><em>Matriz de confusão mostrando o desempenho do modelo em todas as classes de dígitos</em></p>
+</div>
 
-- **CMake Integration**: Cross-platform build system
-- **Pico SDK**: Integration with Raspberry Pi Pico SDK
-- **TFLM Integration**: TensorFlow Lite Micro integration
+### Teste
 
-## Architecture
+Arquivos de dados e validação:
 
-### Model Architecture
+- **Amostras de Teste**: Dados pré-processados para validação
+- **Scripts de Validação**: Scripts para verificar o desempenho do modelo
+- **Benchmarks de Desempenho**: Métricas de comparação
+
+### Sistema de Compilação
+
+- **Integração CMake**: Sistema de compilação multiplataforma
+- **SDK Pico**: Integração com Raspberry Pi Pico SDK
+- **Integração TFLM**: TensorFlow Lite Micro integração
+
+## Arquitetura
+
+### Arquitetura do Modelo
 ```
-Input (28x28x1)
+Entrada (28x28x1)
     ↓
-Conv2D (8 filters, 3x3, stride=2) → 14x14x8
+Conv2D (8 filtros, 3x3, stride=2) → 14x14x8
     ↓
-Conv2D (16 filters, 3x3, stride=2) → 7x7x16
+Conv2D (16 filtros, 3x3, stride=2) → 7x7x16
     ↓
 Global Average Pooling → 16
     ↓
-Dense (10 units, softmax) → 10 (digit classes)
+Dense (10 unidades, softmax) → 10 (classes de dígitos)
 ```
 
-### Key Features
-- **Total Parameters**: ~1,418 (less than 6KB)
-- **Quantization**: INT8 for memory efficiency
-- **Layers**: 4 layers (2 conv + 1 pooling + 1 dense)
-- **Operations**: Optimized for microcontroller execution
+### Recursos Principais
+- **Parâmetros Totais**: ~1.418 (menos de 6KB)
+- **Quantização**: INT8 para eficiência de memória
+- **Camadas**: 4 camadas (2 conv + 1 pooling + 1 dense)
+- **Operações**: Otimizado para execução em microcontroladores
 
-## Getting Started
+## Começando
 
-### Prerequisites
+### Pré-requisitos
 - Python 3.7+
 - TensorFlow 2.x
 - Jupyter Notebook
-- Raspberry Pi Pico SDK (for hardware deployment)
+- Raspberry Pi Pico SDK (para implantação em hardware)
 
-### Training the Model
-1. Navigate to the `notebooks/` directory
-2. Open `Model_Training.ipynb`
-3. Run all cells to train and convert the model
+### Treinando o Modelo
+1. Navegue até o diretório `notebooks/`
+2. Abra `Model_Training.ipynb`
+3. Execute todas as células para treinar e converter o modelo
 
-### Deploying to Hardware
-1. Convert model to header file format
-2. Copy to `firmware/` directory
-3. Build using CMake with Pico SDK
-4. Flash to Raspberry Pi Pico
+### Implantando no Hardware
+1. Converta o modelo para formato de cabeçalho
+2. Copie para o diretório `firmware/`
+3. Compile usando CMake com Pico SDK
+4. Faça flash para o Raspberry Pi Pico
 
-## Performance
+## Desempenho
 
-- **Training Accuracy**: ~89%
-- **Validation Accuracy**: ~88%
-- **Test Accuracy**: ~88.8%
-- **Model Size**: ~5KB (INT8 quantized)
-- **Inference Time**: < 10ms on Pico
+- **Acurácia de Treinamento**: ~89%
+- **Acurácia de Validação**: ~88%
+- **Acurácia de Teste**: ~88.8%
+- **Tamanho do Modelo**: ~5KB (quantizado INT8)
+- **Tempo de Inferência**: < 10ms no Pico
 
-## Contributing
+## Contribuindo
 
-Contributions are welcome! Feel free to submit pull requests or open issues for bugs and feature requests.
+Contribuições são bem-vindas! Sinta-se à vontade para submeter pull requests ou abrir issues para bugs e solicitações de recursos.
 
-## License
+## Licença
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+Este projeto está licenciado sob a Licença MIT - veja o arquivo LICENSE para detalhes.
 
-## Acknowledgments
+## Agradecimentos
 
-- [TensorFlow Lite Micro](https://www.tensorflow.org/lite/microcontrollers) for enabling ML on microcontrollers
-- [MNIST Dataset](http://yann.lecun.com/exdb/mnist/) for the handwritten digit dataset
-- [Raspberry Pi Foundation](https://www.raspberrypi.org/) for the Pico platform
+- [TensorFlow Lite Micro](https://www.tensorflow.org/lite/microcontrollers) por possibilitar ML em microcontroladores
+- [Dataset MNIST](http://yann.lecun.com/exdb/mnist/) para o dataset de dígitos manuscritos
+- [Fundação Raspberry Pi](https://www.raspberrypi.org/) pela plataforma Pico
